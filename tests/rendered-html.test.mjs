@@ -13,14 +13,14 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the PromptLab application shell", async () => {
+test("server-renders the PromptX application shell", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /<title>PromptLab — System Prompt 迭代评估工作台<\/title>/i);
+  assert.match(html, /<title>PromptX — System Prompt 迭代评估工作台<\/title>/i);
   assert.match(html, /PROMPT/);
-  assert.match(html, /LAB/);
+  assert.match(html, />X<\/b>/);
   assert.match(html, /定义 System Prompt/);
   assert.match(html, /分配模型角色/);
   assert.match(html, /准备测试集/);
@@ -43,7 +43,7 @@ test("removes starter artifacts and keeps provider adapters", async () => {
   assert.match(page, /sameEvaluator/);
   assert.match(page, /自定义测试集/);
   assert.match(page, /自动生成测试集/);
-  assert.match(layout, /PromptLab/);
+  assert.match(layout, /PromptX/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(provider, /chat\/completions/);
   assert.match(provider, /responses/);
