@@ -1,6 +1,6 @@
-# PromptLab
+# PromptX
 
-PromptLab 是一个可追踪的 System Prompt 自动优化工作台。它把一条需求扩写成可复用的 System Prompt，再按指定轮次执行：
+PromptX 是一个可追踪的 System Prompt 自动优化工作台。它把一条需求扩写成可复用的 System Prompt，再按指定轮次执行：
 
 1. 将每条测试输入作为独立 user message，与当前 System Prompt 配对运行
 2. 用独立的评估模型对全部结果进行结构化评分
