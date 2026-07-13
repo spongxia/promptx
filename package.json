@@ -1,7 +1,13 @@
 {
-  "name": "promptlab",
+  "name": "promptx",
   "version": "0.1.0",
+  "description": "A traceable System Prompt optimization workspace with separate optimizer and evaluator models.",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spongxia/promptx.git"
+  },
   "engines": {
     "node": ">=22.13.0"
   },
