@@ -15,18 +15,18 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: origin,
-    title: "PromptLab — System Prompt 迭代评估工作台",
+    title: "PromptX — System Prompt 迭代评估工作台",
     description: "用独立优化模型和评估模型，在自定义或 AI 测试集上迭代出可复用的 System Prompt。",
     openGraph: {
-      title: "PromptLab — 优化 System Prompt，不把测试题写进答案",
+      title: "PromptX — 优化 System Prompt，不把测试题写进答案",
       description: "分离模型角色与测试消息，透明迭代可复用的 System Prompt。",
       type: "website",
       url: origin,
-      images: [{ url: socialImage, width: 1731, height: 909, alt: "PromptLab — 让提示词自己进化" }],
+      images: [{ url: socialImage, width: 1731, height: 909, alt: "PromptX — 让提示词自己进化" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "PromptLab — 优化 System Prompt，不把测试题写进答案",
+      title: "PromptX — 优化 System Prompt，不把测试题写进答案",
       description: "分离模型角色与测试消息，透明迭代可复用的 System Prompt。",
       images: [socialImage],
     },

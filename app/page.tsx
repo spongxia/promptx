@@ -167,7 +167,7 @@ function EmptyWorkspace({ totalCalls, testCount }: { totalCalls: number; testCou
       <div className="empty-orbit" aria-hidden="true">
         <div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit-core"><BrandMark /></div>
       </div>
-      <p className="eyebrow">SYSTEM PROMPT EVALUATION LAB</p>
+      <p className="eyebrow">SYSTEM PROMPT EVALUATION</p>
       <h2>优化 System Prompt，<br />不把测试题写进答案。</h2>
       <p className="empty-copy">System Prompt 与 user message 始终分离。便宜模型负责生成和改写，强模型负责跨测试集评估，也可以让两者使用同一配置。</p>
       <div className="prompt-architecture" aria-label="System Prompt 测试架构">
@@ -225,7 +225,7 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      const saved = window.localStorage.getItem("promptlab-config-v2");
+      const saved = window.localStorage.getItem("promptx-config-v2");
       if (!saved) return;
       const value = JSON.parse(saved) as Partial<{
         optimizer: Omit<ProviderForm, "apiKey">;
@@ -256,7 +256,7 @@ export default function Home() {
     const { apiKey: evaluatorKey, ...evaluatorPublic } = evaluator;
     void optimizerKey;
     void evaluatorKey;
-    window.localStorage.setItem("promptlab-config-v2", JSON.stringify({ optimizer: optimizerPublic, evaluator: evaluatorPublic, sameEvaluator, testMode, autoTestCount, autoGuidance, roundCount }));
+    window.localStorage.setItem("promptx-config-v2", JSON.stringify({ optimizer: optimizerPublic, evaluator: evaluatorPublic, sameEvaluator, testMode, autoTestCount, autoGuidance, roundCount }));
   }, [optimizer, evaluator, sameEvaluator, testMode, autoTestCount, autoGuidance, roundCount]);
 
   function updateProvider(role: ModelRole, patch: Partial<ProviderForm>) {
@@ -440,7 +440,7 @@ export default function Home() {
   }
 
   function downloadFinalPrompt() {
-    const content = `# 优化后的 System Prompt\n\n${finalPrompt}\n\n---\n由 PromptLab 经过 ${roundCount} 轮、${resolvedTests.length} 条测试输入迭代生成。`;
+    const content = `# 优化后的 System Prompt\n\n${finalPrompt}\n\n---\n由 PromptX 经过 ${roundCount} 轮、${resolvedTests.length} 条测试输入迭代生成。`;
     const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
@@ -453,7 +453,7 @@ export default function Home() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <div className="brand"><BrandMark /><span>PROMPT</span><b>LAB</b></div>
+        <div className="brand"><BrandMark /><span>PROMPT</span><b>X</b></div>
         <div className="topbar-center">System Prompt 迭代评估工作台 <span>Beta</span></div>
         <div className="privacy-pill"><span className="status-dot" />API Key 不落盘</div>
       </header>
